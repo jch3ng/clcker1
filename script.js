@@ -10,12 +10,23 @@ function updateScore() {
   scoreElement.textContent = `Score: ${score}`;
 }
 
+
+function checkScore() {
+  if (score === 11) {
+    displayClock();
+  }
+}
+
+function displayClock() {
+  const clockDiv = document.getElementById("clock");
+  clockDiv.style.display = "block";
+}
+
+
 // Click event handler
 clickButton.addEventListener("click", () => {
   score++;
   updateScore();
+  checkScore();
 });
-
-// Initial update of the score display
-updateScore();
 
